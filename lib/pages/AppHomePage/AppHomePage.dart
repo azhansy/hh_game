@@ -38,7 +38,7 @@ class _AppHomePageState extends State<AppHomePage> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     initTools();
-    assetsAudioPlayer.loop = true; // 重复
+    assetsAudioPlayer.setLoopMode(LoopMode.playlist); // 重复
     SystemChrome.setEnabledSystemUIOverlays([]);
     WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -105,7 +105,7 @@ class _AppHomePageState extends State<AppHomePage> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     // 初始化设计稿尺寸
-    ScreenUtil.init(context, width: 1080, height: 2160, allowFontScaling: true);
+    ScreenUtil.init(context,designSize: Size(1080, 2160));
     _appStore = Provider.of<AppHomePageStore>(context);
     return Scaffold(
       body: Stack(

@@ -88,12 +88,12 @@ class AppHomePageStore extends ChangeNotifier {
     _userSuccess = 0;
     saveSliderState(SliderState.normal);
     for (var i = 0; i < _eleBoxs.length; i++) {
-      _eleBoxs[i].controller.reset();
+      _eleBoxs[i].controller?.reset();
       _eleBoxs[i].isClick = true;
       Timer(Duration(milliseconds: 300), () {
         _eleBoxs[i].controller.forward();
         Timer(Duration(seconds: 2), () {
-          _eleBoxs[i].controller.reset();
+          _eleBoxs[i].controller?.reset();
         });
       });
     }
